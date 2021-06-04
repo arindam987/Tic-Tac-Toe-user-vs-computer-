@@ -1,0 +1,386 @@
+import random
+
+lis=["."]*9
+i=0
+l=1
+a=0
+v=2
+c=[0,1,2,3,4,5,6,7,8]
+t=0
+w=0
+
+def complog():
+        q=0
+    
+    #elif(n==1 or n==2 or n==3):
+        if(lis[0]==lis[1]=="O" and lis[0]==lis[1]!="." ):
+            if(lis[2]=="."):
+                lis[2]="O"
+                q+=1
+                return q,2;
+        if(lis[0]==lis[2]=="O" and lis[0]==lis[2]!="."):
+            if(lis[1]=="."):
+                lis[1]="O"
+                q+=1
+                return q,1;
+        if(lis[1]==lis[2]=="O" and lis[1]==lis[2]!="."):
+            if(lis[0]=="."): 
+                lis[0]="O"
+                q+=1
+                return q,0;
+    #elif(n==1 or n==4 or n==7):
+        if(lis[0]==lis[3]=="O" and lis[0]==lis[3]!="."):
+            if(lis[6]=="."):
+                lis[6]="O"
+                q+=1
+                return q,6;
+        if(lis[0]==lis[6]=="O" and lis[0]==lis[6]!="."):
+            if(lis[3]=="."):
+                lis[3]="O"
+                q+=1
+                return q,3;
+        if(lis[3]==lis[6]=="O" and lis[3]==lis[6]!="."):
+            if(lis[0]=="."):
+                lis[0]="O"
+                q+=1
+                return q,0;
+    #elif(n==1 or n==5 or n==9):
+        if(lis[0]==lis[4]=="O" and lis[0]==lis[4]!="."):
+            if(lis[8]=="."):
+                lis[8]="O"
+                q+=1
+                return q,8;
+        if(lis[0]==lis[8]=="O" and lis[0]==lis[8]!="."):
+            if(lis[4]=="."):
+                lis[4]="O"
+                q+=1
+                return q,4;
+        if(lis[4]==lis[8]=="O" and lis[4]==lis[8]!="."):
+            if(lis[0]=="."):
+                lis[0]="O"
+                q+=1
+                return q,0;
+   # elif(n==2 or n==5 or n==8):
+        if(lis[1]==lis[4]=="O" and lis[4]==lis[1]!="."):
+            if(lis[7]=="."):
+                lis[7]="O"
+                q+=1
+                return q,7;
+        if(lis[4]==lis[7]=="O" and lis[4]==lis[7]!="."):
+            if(lis[1]=="."):
+                lis[1]="O"
+                q+=1
+                return q,1;
+        if(lis[1]==lis[7]=="O" and lis[7]==lis[1]!="."):
+            if(lis[4]=="."):
+                lis[4]="O"
+                q+=1
+                return q,4;
+    #elif(n==4 or n==5 or n==6):
+        if(lis[3]==lis[4]=="O" and lis[3]==lis[4]!="."):
+            if(lis[5]=="."):
+                lis[5]="O"
+                q+=1
+                return q,5;
+        if(lis[3]==lis[5]=="O" and lis[3]==lis[5]!="."):
+            if(lis[4]=="."):
+                lis[4]="O"
+                q+=1
+                return q,4;
+        if(lis[4]==lis[5]=="O" and lis[4]==lis[5]!="."):
+            if(lis[3]=="."):
+                lis[3]="O"
+                q+=1
+                return q,3;
+    #elif(n==3 or n==6 or n==9):
+        if(lis[2]==lis[5]=="O" and lis[2]==lis[5]!="."):
+            if(lis[8]=="."):
+                lis[8]="O"
+                q+=1
+                return q,8;
+        if(lis[5]==lis[8]=="O" and lis[5]==lis[8]!="."):
+            if(lis[2]=="."):
+                lis[2]="O"
+                q+=1
+                return q,2;
+        if(lis[2]==lis[8]=="O" and lis[2]==lis[8]!="."):
+            if(lis[5]=="."):
+                lis[5]="O"
+                q+=1
+                return q,5;
+    #elif(n==7 or n==8 or n==9):
+        if(lis[6]==lis[7]=="O" and lis[6]==lis[7]!="."):
+            if(lis[8]=="."):
+                lis[8]="O"
+                q+=1
+                return q,8;
+        if(lis[6]==lis[8]=="O" and lis[6]==lis[8]!="."):
+            if(lis[7]=="."):
+                lis[7]="O"
+                q+=1
+                return q,7;
+        if(lis[7]==lis[8]=="O" and lis[7]==lis[8]!="."):
+            if(lis[6]=="."):
+                lis[6]="O"
+                q+=1
+                return q,6;
+         #elif(n==3 or n==5 or n==7):
+        if(lis[2]==lis[4]=="O" and lis[2]==lis[4]!="."):
+            if(lis[6]=="."):
+                lis[6]="O"
+                q+=1
+                return q,6;
+        if(lis[6]==lis[2]=="O" and lis[6]==lis[2]!="."):
+            if(lis[4]=="."):
+                lis[4]="O"
+                q+=1
+                return q,4;
+        if(lis[6]==lis[4]=="O" and lis[6]==lis[4]!="."):
+            if(lis[2]=="."):
+                lis[2]="O"
+                q+=1
+                return q,2;
+        else:
+            q=0
+            return q,10;
+
+def comp():
+
+        w,re=complog()
+        print("\n",w,re)
+        if(re<10):
+            c.remove(re)
+        if(w==0):  
+            #elif(n==1 or n==2 or n==3):
+                if(lis[0]==lis[1]=="X" and lis[0]==lis[1]!="." ):
+                    if(lis[2]=="."):
+                        lis[2]="O"
+                        c.remove(2)
+                        return 0;
+                if(lis[0]==lis[2]=="X" and lis[0]==lis[2]!="."):
+                    if(lis[1]=="."):
+                        lis[1]="O"
+                        c.remove(1)
+                        return 0;
+                if(lis[1]==lis[2]=="X" and lis[1]==lis[2]!="."):
+                    if(lis[0]=="."): 
+                        lis[0]="O"
+                        c.remove(0)
+                        return 0;
+            #elif(n==1 or n==4 or n==7):
+                if(lis[0]==lis[3]=="X" and lis[0]==lis[3]!="."):
+                    if(lis[6]=="."):
+                        lis[6]="O"
+                        c.remove(6)
+                        return 0;
+                if(lis[0]==lis[6]=="X" and lis[0]==lis[6]!="."):
+                    if(lis[3]=="."):
+                        lis[3]="O"
+                        c.remove(3)
+                        return 0;
+                if(lis[3]==lis[6]=="X" and lis[3]==lis[6]!="."):
+                    if(lis[0]=="."):
+                        lis[0]="O"
+                        c.remove(0)
+                        return 0;
+            #elif(n==1 or n==5 or n==9):
+                if(lis[0]==lis[4]=="X" and lis[0]==lis[4]!="."):
+                    if(lis[8]=="."):
+                        lis[8]="O"
+                        c.remove(8)
+                        return 0;
+                if(lis[0]==lis[8]=="X" and lis[0]==lis[8]!="."):
+                    if(lis[4]=="."):
+                        lis[4]="O"
+                        c.remove(4)
+                        return 0;
+                if(lis[4]==lis[8]=="X" and lis[4]==lis[8]!="."):
+                    if(lis[0]=="."):
+                        lis[0]="O"
+                        c.remove(0)
+                        return 0;
+           # elif(n==2 or n==5 or n==8):
+                if(lis[1]==lis[4]=="X" and lis[4]==lis[1]!="."):
+                    if(lis[7]=="."):
+                        lis[7]="O"
+                        c.remove(7)
+                        return 0;
+                if(lis[4]==lis[7]=="X" and lis[4]==lis[7]!="."):
+                    if(lis[1]=="."):
+                        lis[1]="O"
+                        c.remove(1)
+                        return 0;
+                if(lis[1]==lis[7]=="X" and lis[7]==lis[1]!="."):
+                    if(lis[4]=="."):
+                        lis[4]="O"
+                        c.remove(4)
+                        return 0;
+            #elif(n==4 or n==5 or n==6):
+                if(lis[3]==lis[4]=="X" and lis[3]==lis[4]!="."):
+                    if(lis[5]=="."):
+                        lis[5]="O"
+                        c.remove(5)
+                        return 0;
+                if(lis[3]==lis[5]=="X" and lis[3]==lis[5]!="."):
+                    if(lis[4]=="."):
+                        lis[4]="O"
+                        c.remove(4)
+                        return 0;
+                if(lis[4]==lis[5]=="X" and lis[4]==lis[5]!="."):
+                    if(lis[3]=="."):
+                        lis[3]="O"
+                        c.remove(3)
+                        return 0;
+            #elif(n==3 or n==6 or n==9):
+                if(lis[2]==lis[5]=="X" and lis[2]==lis[5]!="."):
+                    if(lis[8]=="."):
+                        lis[8]="O"
+                        c.remove(8)
+                        return 0;
+                if(lis[5]==lis[8]=="X" and lis[5]==lis[8]!="."):
+                    if(lis[2]=="."):
+                        lis[2]="O"
+                        c.remove(2)
+                        return 0;
+                if(lis[2]==lis[8]=="X" and lis[2]==lis[8]!="."):
+                    if(lis[5]=="."):
+                        lis[5]="O"
+                        c.remove(5)
+                        return 0;
+            #elif(n==7 or n==8 or n==9):
+                if(lis[6]==lis[7]=="X" and lis[6]==lis[7]!="."):
+                    if(lis[8]=="."):
+                        lis[8]="O"
+                        c.remove(8)
+                        return 0;
+                if(lis[6]==lis[8]=="X" and lis[6]==lis[8]!="."):
+                    if(lis[7]=="."):
+                        lis[7]="O"
+                        c.remove(7)
+                        return 0;
+                if(lis[7]==lis[8]=="X" and lis[7]==lis[8]!="."):
+                    if(lis[6]=="."):
+                        lis[6]="O"
+                        c.remove(6)
+                        return 0;
+            #elif(n==3 or n==5 or n==7):
+                if(lis[2]==lis[4]=="X" and lis[2]==lis[4]!="."):
+                    if(lis[6]=="."):
+                        lis[6]="O"
+                        c.remove(6)
+                        return 0;
+                if(lis[6]==lis[2]=="X" and lis[6]==lis[2]!="."):
+                    if(lis[4]=="."):
+                        lis[4]="O"
+                        c.remove(4)
+                        return 0;
+                if(lis[6]==lis[4]=="X" and lis[6]==lis[4]!="."):
+                    if(lis[2]=="."):
+                        lis[2]="O"
+                        c.remove(2)
+                        return 0; 
+                         #special case:
+                if(lis[0]=="X" or lis[2]=="X" or lis[6]=="X" or lis[8]=="X"):
+                    if(lis[4]=="."):
+                        lis[4]="O"
+                        c.remove(4)
+                        return 0;
+
+            #special case:
+                if(lis[0]==lis[8]=="X" or lis[2]==lis[6]=="X"):
+                        if(lis[1]=="."):
+                            lis[1]="O"
+                            c.remove(1)
+                            return 0;
+                        elif(lis[3]=="."):
+                            lis[3]="O"
+                            c.remove(3)
+                            return 0;
+                        elif(lis[5]=="."):
+                            lis[5]="O"
+                            c.remove(5)
+                            return 0;
+                        elif(lis[7]=="."):
+                            lis[7]="O"
+                            c.remove(7)
+                            return 0;
+            #not matching cases
+                else:
+                   
+                    u=random.choice(c)
+                    lis[u]="O"
+
+
+def check():
+    if(lis[0]==lis[1]==lis[2] and lis[0]==lis[1]==lis[2]!="."):
+        r=1
+        return r
+    if(lis[0]==lis[3]==lis[6] and lis[0]==lis[3]==lis[6]!="."):
+        r=1
+        return r
+    if(lis[0]==lis[4]==lis[8] and lis[0]==lis[4]==lis[8]!="."):
+        r=1
+        return r
+    if(lis[1]==lis[4]==lis[7] and lis[1]==lis[4]==lis[7]!="."):
+        r=1
+        return r
+    if(lis[3]==lis[4]==lis[5] and lis[3]==lis[4]==lis[5]!="."):
+        r=1
+        return r
+    if(lis[2]==lis[4]==lis[6] and lis[2]==lis[4]==lis[6]!="."):
+        r=1
+        return r
+    if(lis[2]==lis[5]==lis[8] and lis[2]==lis[5]==lis[8]!="."):
+        r=1
+        return r
+    if(lis[6]==lis[7]==lis[8] and lis[6]==lis[7]==lis[8]!="."):
+        r=1
+        return r
+    
+for k in range(3):
+    for j in range(3):
+        print(l,'\t',end=" ");
+        l+=1;
+    print("\n");
+draw=0
+    
+while(i<9):
+    if(i%2==0):
+        print("\t\t\tUSER (X)")
+        n=int(input('enter position : '));
+        c.remove(n-1)
+        if(lis[n-1]=="X" or lis[n-1]=="O" or n==0 or n>10):
+            print('plz enter other position ');
+            continue;
+            
+        lis[n-1]="X";
+    else:
+        print("\t\t\tCOMPUTER (O)")
+        comp();
+
+    
+    
+    if(True):
+        
+        
+        l=0
+        for k in range(3):
+            for j in range(3):
+                print(lis[l],"\t",end=" ");
+                l+=1;
+            print("\n");
+        a=check();
+        
+        if(a==1):
+            draw+=1
+            if(i%2==0):
+                print("\t\t\tUSER IS WINNER")
+                break
+            else:
+                print("\t\t\tCOMPUTER IS WINNER") 
+                break
+        i+=1;
+        
+if(draw==0):
+    print("\t\t\tMATCH DRAW")
+              
